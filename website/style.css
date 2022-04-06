@@ -1,111 +1,161 @@
-body{
-    background: #fffff8;
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
 }
 
-#app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
-    height:100vh;
-    background: #f23557;
-    color: #f0d43a;
-    justify-content: center;
-    grid-gap: 1em;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background-image: url('/website/img/daniel-ramirez-unsplash.jpg');
+  background-size: cover;
+}
+header {
+  color: white;
 }
 
-.holder{
-
+#app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+  border-radius: 10%;
+  margin-top: 1%;
+  opacity: 0.9;
+  text-shadow: 0 0 2px #000;
 }
 
-.entry{
-    background: rgba(59, 74, 107, .4);
+.holder {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#entryHolder{
-
+#entryHolder {
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 1em;
 }
 
-#date{
-
+#backBtn {
+  visibility: hidden;
+  border-radius: 1em 0em 2em 3em;
+  padding: 0.1em;
+  margin-bottom: 30%;
 }
 
-#temp{
-
-}
-
-#content{
-
+#zipDiv,
+#cityDiv,
+#feelingDiv {
+  visibility: visible;
 }
 
 .headline {
-
-}
-.title{
-
+  border-radius: 5%;
 }
 
 /*  Basic Styling To Override Default For Basic HTML Elements */
-label{
-    display:block;
-    font-size: 27px;
+label {
+  font-size: 1.5rem;
+  padding: 0.3em;
 }
 
-input{
-    display:block;
-    height: 60px;
-    width: 320px;
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
+input {
+  text-align: center;
+  width: fit-content;
+  background: #ffffff;
+  color: rgb(0, 100, 146);
+  font-size: 1.1rem;
+  font-family: 'Oswald', sans-serif;
+  border: none;
+  padding: 5%;
 }
 
-button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
-    font-size: 26px;
-    font-family: 'Oswald', sans-serif;
-    border: none;
-    box-shadow: 2px 4px 5px #444;
-}
-h1{
-    font-size: 36px;
+input::placeholder {
+  color: black;
 }
 
-textarea{
-    background:#22b2da;
-    color: #f0d43a;
-    font-size: 20px;
-    font-family: 'Oswald', sans-serif;
+button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: white 10px solid;
+  margin-top: 10%;
+  background: rgb(0, 100, 146);
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 2px 4px 5px #444;
+  padding: 0.3em;
 }
-/* Reset style for HTML element on active to have no border*/
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  padding: 0.3em;
+}
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
-    outline: none;
+  outline: none;
 }
 /* Style for Placeholder Text*/
-::placeholder { /* Firefox, Chrome, Opera */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+::placeholder {
+  /* Firefox, Chrome, Opera */
+  color: #ffffff;
+  font-family: 'Oswald', sans-serif;
+}
 
-} 
-  
-:-ms-input-placeholder { /* Internet Explorer 10-11 */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #f0d43a;
+  font-family: 'Oswald', sans-serif;
+}
 
-} 
-  
-::-ms-input-placeholder { /* Microsoft Edge */ 
-    color: #f0d43a; 
-    font-family: 'Oswald', sans-serif;
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #f0d43a;
+  font-family: 'Oswald', sans-serif;
+}
 
-} 
+/* ==============
+  responsive
+=================*/
+
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 2.5rem;
+    font-weight: 900;
+  }
+}
+
+@media (max-width: 360px) {
+  header h1 {
+    font-size: 2.3rem;
+    font-weight: 900;
+  }
+  label {
+    font-size: 1.1rem;
+  }
+  input {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.9rem;
+    padding: 0.1em;
+    width: 80px;
+    height: 80px;
+  }
+  #entryHolder {
+    font-size: 1.1rem;
+  }
+}
